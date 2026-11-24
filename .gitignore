@@ -1,0 +1,27 @@
+# dependencies and build output
+node_modules/
+dist/
+coverage/
+
+# environment and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.jks
+*.keystore
+google-services.json
+firebase-admin*.json
+
+# logs and OS files
+*.log
+.DS_Store
+
+# editor and tooling
+.idea/
+.vscode/
+.claude/
+AGENTS.md
+CLAUDE.md
+*.tsbuildinfo
