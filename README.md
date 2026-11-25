@@ -41,7 +41,7 @@ The server binds to `127.0.0.1` by default. Change `HOST` only if you know why.
 
 - [x] Project scaffold, environment validation, health endpoint
 - [x] PostgreSQL connection and database health check
-- [ ] TypeORM entities and migrations for podcasts and episodes
+- [x] TypeORM entities and migrations for podcasts and episodes
 - [ ] Episode discovery from the output folder (`meta.json` plus `READY`)
 - [ ] Opus encoding and S3 upload
 - [ ] Static catalog export (index plus monthly shards)
