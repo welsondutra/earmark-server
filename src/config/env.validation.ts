@@ -3,6 +3,11 @@ export interface Env {
   HOST: string;
   CORS_ORIGINS: string[];
   ADMIN_TOKEN: string;
+  DATABASE_HOST: string;
+  DATABASE_PORT: number;
+  DATABASE_USER: string;
+  DATABASE_PASSWORD: string;
+  DATABASE_NAME: string;
 }
 
 const MIN_ADMIN_TOKEN_LENGTH = 32;
@@ -46,5 +51,10 @@ export function validateEnv(config: Record<string, unknown>): Env {
     HOST: readString(config.HOST, 'HOST', '127.0.0.1'),
     CORS_ORIGINS: readList(config.CORS_ORIGINS),
     ADMIN_TOKEN: readSecret(config.ADMIN_TOKEN, 'ADMIN_TOKEN', MIN_ADMIN_TOKEN_LENGTH),
+    DATABASE_HOST: readString(config.DATABASE_HOST, 'DATABASE_HOST', 'localhost'),
+    DATABASE_PORT: readPort(config.DATABASE_PORT, 'DATABASE_PORT', 5432),
+    DATABASE_USER: readString(config.DATABASE_USER, 'DATABASE_USER', 'earmark'),
+    DATABASE_PASSWORD: readString(config.DATABASE_PASSWORD, 'DATABASE_PASSWORD'),
+    DATABASE_NAME: readString(config.DATABASE_NAME, 'DATABASE_NAME', 'earmark'),
   };
 }

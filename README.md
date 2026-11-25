@@ -16,7 +16,8 @@ reachable when the server is off.
 ## Getting started
 
 ```bash
-cp .env.example .env        # set ADMIN_TOKEN (32+ characters)
+cp .env.example .env        # set ADMIN_TOKEN (32+ characters) and DATABASE_PASSWORD
+docker compose up -d db
 npm install
 npm run start:dev
 ```
@@ -39,7 +40,8 @@ The server binds to `127.0.0.1` by default. Change `HOST` only if you know why.
 ## Roadmap
 
 - [x] Project scaffold, environment validation, health endpoint
-- [ ] PostgreSQL, TypeORM entities and migrations for podcasts and episodes
+- [x] PostgreSQL connection and database health check
+- [ ] TypeORM entities and migrations for podcasts and episodes
 - [ ] Episode discovery from the output folder (`meta.json` plus `READY`)
 - [ ] Opus encoding and S3 upload
 - [ ] Static catalog export (index plus monthly shards)
